@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Pedidos - Ropa Deportiva</title>       
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon2.ico" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+        <!-- MENÚ -->
+
+        <div id="contenedorNav">
+
+        </div>
+    
+        <!-- CIERRA MENÚ -->
+
+    <div class="container mt-5">
+        <h1 class="text-center">Seguimiento de Pedidos</h1>
+
+        <!-- Pedido 1 -->
+        <div class="card mt-4" id="pedido-12345">
+            <div class="card-header">
+                Pedido #12345
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Ropa Deportiva - Camiseta Running</h5>
+                <p class="card-text">Fecha de Pedido: 16 de Agosto, 2024</p>
+                <p class="card-text">Estado: En tránsito</p>
+                <p class="card-text">Fecha Estimada de Entrega: 20 de Agosto, 2024</p>
+                <button class="btn btn-danger" onclick="cancelarPedido('pedido-12345')">Cancelar Pedido</button>
+            </div>
+        </div>
+
+        <!-- Pedido 2 -->
+        <div class="card mt-4" id="pedido-12346">
+            <div class="card-header">
+                Pedido #12346
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Ropa Deportiva - Pantalones de Entrenamiento</h5>
+                <p class="card-text">Fecha de Pedido: 15 de Agosto, 2024</p>
+                <p class="card-text">Estado: Preparando para envío</p>
+                <p class="card-text">Fecha Estimada de Entrega: 19 de Agosto, 2024</p>
+                <button class="btn btn-danger" onclick="cancelarPedido('pedido-12346')">Cancelar Pedido</button>
+            </div>
+        </div>
+
+        <!-- Pedido 3 -->
+        <div class="card mt-4" id="pedido-12347">
+            <div class="card-header">
+                Pedido #12347
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Ropa Deportiva - Zapatillas de Running</h5>
+                <p class="card-text">Fecha de Pedido: 14 de Agosto, 2024</p>
+                <p class="card-text">Estado: Entregado</p>
+                <p class="card-text">Fecha de Entrega: 16 de Agosto, 2024</p>
+                <button class="btn btn-secondary" disabled>Pedido Entregado</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function cancelarPedido(idPedido) {
+            // Mostrar confirmación antes de cancelar el pedido
+            let confirmacion = confirm("¿Estás seguro de que deseas cancelar este pedido?");
+            if (confirmacion) {
+                // Eliminar el pedido de la página
+                document.getElementById(idPedido).remove();
+                alert("El pedido ha sido cancelado.");
+            }
+        }
+    </script>
+    
+    <script type="module" src="./scr/index.js"></script>
+         
+        <script src="js/scripts.js"></script>
+</body>
+</html>
+
